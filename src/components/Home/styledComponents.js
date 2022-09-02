@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const MainDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,82 +8,72 @@ export const Container = styled.div`
   min-height: 100vh;
   background-color: #25262c;
 `
-
-export const MainContainer = styled.div`
+export const CardDiv = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #1b1c22;
   width: 80%;
+  background-color: #1b1c22;
   height: 80vh;
   padding: 15px;
 `
-
-export const CardContainer = styled.div`
+export const LeftDiv = styled.div`
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   width: 50%;
-  height: 100%;
 `
-
-export const Heading = styled.h1`
-  color: #faf8fc;
+export const LeftH1 = styled.h1`
   font-size: 30px;
   font-weight: 800;
-  margin-bottom: 120px;
-  margin-top: 30px;
+  color: #f8fafc;
 `
-
-export const Image = styled.img`
-  height: 50%;
+export const LeftImg = styled.img`
+  height: 70%;
 `
-
-export const EditingContainer = styled.div`
+export const RightDiv = styled.div`
+  height: 100%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  border: 2px solid #334155;
+  background-color: #25262c;
   border-radius: 10px;
-  width: 50%;
-  height: 100%;
+  border: 2px solid #334155;
 `
-
-export const List = styled.ul`
+export const ToolUl = styled.ul`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   padding: 10px;
 `
-
-export const Items = styled.li`
+export const ToolLi = styled.li`
   display: flex;
-  list-style-type: none;
 `
 
 export const Button = styled.button`
-  color: ${props => props.colorText};
   background-color: transparent;
   border: none;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 5px;
+  color: ${props => props.colorText};
 `
-
 export const TextArea = styled.textarea`
-  color: #f8fafc;
+  height: 100%;
   background-color: #25262c;
-  font-style: ${props => (props.isItalic ? 'italic' : 'normal')};
-  font-size: 20px;
-  font-weight: ${props => (props.isBold ? 'bold' : 'normal')};
-  text-decoration: ${props => (props.isUnderline ? 'underline' : 'normal')};
+  border: none;
   border-top: 2px solid #334155;
   width: 100%;
-  height: 100%;
-  padding: 20px;
-  border: none;
   outline: none;
+  font-size: 20px;
+  font-weight: ${props => (props.isBold ? 'bold' : 'normal')};
+  color: #f8fafc;
+  padding: 20px;
+  text-decoration: ${props => (props.isUnderline ? 'underline' : 'normal')};
+  font-style: ${props => (props.isItalic ? 'italic' : 'normal')};
 `

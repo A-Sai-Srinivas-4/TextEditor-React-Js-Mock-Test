@@ -1,23 +1,21 @@
 import {Component} from 'react'
-
 import {VscBold} from 'react-icons/vsc'
 import {GoItalic} from 'react-icons/go'
 import {AiOutlineUnderline} from 'react-icons/ai'
-
 import {
-  Container,
-  MainContainer,
-  CardContainer,
-  Heading,
-  Image,
-  EditingContainer,
-  List,
-  Items,
+  MainDiv,
+  CardDiv,
+  LeftDiv,
+  LeftH1,
+  LeftImg,
+  RightDiv,
+  ToolUl,
+  ToolLi,
   Button,
   TextArea,
 } from './styledComponents'
 
-class TextEditor extends Component {
+class Home extends Component {
   state = {isBold: false, isItalic: false, isUnderline: false}
 
   onClickBold = () => {
@@ -34,59 +32,58 @@ class TextEditor extends Component {
 
   render() {
     const {isBold, isItalic, isUnderline} = this.state
-    const boldImg = isBold ? '#faff00' : '#f1f5f0'
-    const italicImg = isItalic ? '#faff00' : '#f1f5f0'
-    const underlineImg = isUnderline ? '#faff00' : '#f1f5f0'
+    const boldLogo = isBold ? '#faff00' : '#f1f5f9'
+    const italicLogo = isItalic ? '#faff00' : '#f1f5f9'
+    const underlineLogo = isUnderline ? '#faff00' : '#f1f5f9'
     return (
-      <Container>
-        <MainContainer>
-          <CardContainer>
-            <Heading>Text Editor</Heading>
-            <Image
+      <MainDiv>
+        <CardDiv>
+          <LeftDiv>
+            <LeftH1>Text Editor</LeftH1>
+            <LeftImg
               src="https://assets.ccbp.in/frontend/react-js/text-editor-img.png"
               alt="text editor"
             />
-          </CardContainer>
-          <EditingContainer>
-            <List>
-              <Items>
+          </LeftDiv>
+          <RightDiv>
+            <ToolUl>
+              <ToolLi>
                 <Button
                   data-testid="bold"
-                  colorText={boldImg}
+                  colorText={boldLogo}
                   onClick={this.onClickBold}
                 >
                   <VscBold size={25} />
                 </Button>
-              </Items>
-              <Items>
+              </ToolLi>
+              <ToolLi>
                 <Button
                   data-testid="italic"
-                  colorText={italicImg}
+                  colorText={italicLogo}
                   onClick={this.onClickItalic}
                 >
                   <GoItalic size={25} />
                 </Button>
-              </Items>
-              <Items>
+              </ToolLi>
+              <ToolLi>
                 <Button
                   data-testid="underline"
-                  colorText={underlineImg}
+                  colorText={underlineLogo}
                   onClick={this.onClickUnderline}
                 >
                   <AiOutlineUnderline size={25} />
                 </Button>
-              </Items>
-            </List>
+              </ToolLi>
+            </ToolUl>
             <TextArea
               isBold={isBold}
-              isItalic={isItalic}
               isUnderline={isUnderline}
+              isItalic={isItalic}
             />
-          </EditingContainer>
-        </MainContainer>
-      </Container>
+          </RightDiv>
+        </CardDiv>
+      </MainDiv>
     )
   }
 }
-
-export default TextEditor
+export default Home
